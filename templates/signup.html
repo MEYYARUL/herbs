@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup</title>
+    <style>
+      body {
+        background-image: url("/static/images/background_login.jpg"); /* Adjust the path to your image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+      }
+      /* Additional styles for the form */
+      div {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-image: linear-gradient(#d1ff47, #2aee07, #2ddc36);
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: medium;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Signup</h1>
+      <form method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br />
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" required /><br />
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required /><br />
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required /><br />
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea><br />
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" required /><br />
+        <label for="phone_number">Phone Number:</label>
+        <input
+          type="text"
+          id="phone_number"
+          name="phone_number"
+          required
+        /><br />
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required /><br />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <button type="submit">Signup</button>
+      </form>
+      <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+    </div>
+  </body>
+</html>

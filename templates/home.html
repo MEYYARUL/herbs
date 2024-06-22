@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+      body {
+        background-image: url("/static/images/background_home1.jpg");
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        /* background-color: #fff; */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .container-1 {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(254, 253, 255);
+        font-size: 50px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      a:hover {
+        background-color: #f0f0f0;
+        color: blue;
+      }
+      
+    </style>
+  </head>
+  <body>
+      <header>
+          <div class="container">
+              <h1>Herbal Products</h1>
+          </div>
+      </header>
+  
+      <main>
+        <div class="container-1">
+            <ul>
+                {% for product in products %}
+                <li>
+                    <a href="{{ url_for('view_product', product_id=product.id) }}"> 
+                        <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}" style="width:250px;height:250px;"> <br>
+                        <span><b>{{ product.name }}</b> <br>{{ product.description }} <br>
+                          Price :{{ product.price }}</span>
+                 
+                    
+                  </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+  
+      <footer>
+          <div  style="color: #fff; text-align: center; ">
+              <p>&copy; 2024 My App. All rights reserved.</p>
+          </div>
+      </footer>
+</html>

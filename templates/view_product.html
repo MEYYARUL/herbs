@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ product.name }}</title>
+    <!-- <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    /> -->
+    <style>
+      body {
+        background-image: url("/static/images/background_home1.jpg");
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .container-1 {
+        max-width: 800px;
+        margin: 20px auto;
+        /* background-color: #fff; */
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .ti {
+        text-align: center;
+        margin-bottom: 20px;
+        color: rgb(254, 253, 255);
+        font-size: 50px;
+      }
+      button {
+        border: none;
+        border-radius: 30px;
+        background-color: green;
+        height: 45px;
+        width: 150px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container-1">
+        <h1 class="ti">Herbal Products</h1>
+      </div>
+    </header>
+
+    <!-- <div class="container">
+      <h1>{{ product.name }}</h1>
+    </div> -->
+    <main>
+      <div class="container">
+        <h1>{{ product.name }}</h1>
+        <img
+          src="{{ url_for('static', filename=product.image_url) }}"
+          alt="{{ product.name }}"
+          style="width: 250px; height: 250px"
+        />
+        <p>ID: {{ product.id }}</p>
+        <p>Description: {{ product.description }}</p>
+        <p>Price: {{ product.price }}</p>
+        <form
+          method="POST"
+          action="{{ url_for('confirm_order', product_id=product.id) }}"
+        >
+          <button type="submit" class="order-button">
+            <b>Confirm Order</b>
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <p style="text-align: center; color: #fff">
+        &copy; 2024 My App. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

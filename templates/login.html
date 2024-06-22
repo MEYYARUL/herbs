@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        background-image: url("/static/images/background_login.jpg"); /* Adjust the path to your image */
+        background-size: cover;
+        background-position: center;
+        font-family: Arial, sans-serif;
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+      /* Additional styles for the form */
+      div {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.8
+        ); /* Semi-transparent white background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-image: linear-gradient(#d1ff47, #2aee07, #2ddc36);
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div>
+      <h1>Login</h1>
+      <form method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required /><br /><br />
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="{{ url_for('signup') }}">Signup</a></p>
+    </div>
+  </body>
+</html>

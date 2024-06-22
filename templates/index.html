@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Response Form</title>
+  </head>
+  <body>
+    <h1>Response Form</h1>
+    <form method="post">
+      <label for="user_input">Enter text:</label>
+      <input
+        type="text"
+        id="user_input"
+        name="user_input"
+        required
+      /><br /><br />
+      <label for="response">Response (yes/no):</label>
+      <input type="text" id="response" name="response" required /><br /><br />
+      <button type="submit">Submit</button>
+    </form>
+    <p>{{ message }}</p>
+  </body>
+</html>
